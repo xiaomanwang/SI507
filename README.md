@@ -6,4 +6,4 @@ SI507F17_project1_tests.py  is used to test whether SI507F17_project1_cards.py i
 The first one is in test_print (__main__.CardTest) . The supposed output is ‘Ace of Diamonds’ while the real output is ‘1 of Diamonds’. Test_deckprint (__main__.DeckTest) also fail because of this kind of bug.
 The second bug is in test_sortcard (__main__.DeckTest). If some card is been posed off, sort function should sort the remaining deck. However, it returns a deck with 52 cards which is contradict to what the description say.
 The third bug is in test_deal_hand (__main__.DeckTest). When asked to deal 52 cards, it shows error. 
-The 4th bug is in test_show_song (__main__.Test_function_show_song). When we input ‘Winner’, it returns 사랑하지마 but not a string contains ‘Winner’.
+The 4th bug is in test_show_song (__main__.Test_function_show_song). When we input ‘Winner’, it returns I'M YOUNG but not a string contains ‘Winner’.

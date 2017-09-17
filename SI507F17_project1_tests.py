@@ -30,14 +30,17 @@ class CardTest(unittest.TestCase):
 
 
 class DeckTest(unittest.TestCase):
-    def test_Allcrads(self):  # Testing if the constructor builds a list of cards
+    def test_Allcrads(self):
+        # Testing if the constructor builds a list of cards
         deck = Deck()
-        All = [(x, y) for x in ['Diamonds', 'Clubs', 'Hearts', 'Spades'] for y in range(1, 14)]
+        All = [(x, y) for x in ['Diamonds', 'Clubs', 'Hearts', 'Spades']
+        for y in range(1, 14)]
         for card in deck.cards:
             self.assertIn((card.suit, card.rank_num), All)
             All.remove((card.suit, card.rank_num))
 
-    def test_deckprint(self):  # Testing if the Deck string method return a multi-line string
+    def test_deckprint(self):
+        # Testing if the Deck string method return a multi-line string
         deck = Deck()
         A = ''
         for card in deck.cards:
@@ -70,7 +73,7 @@ class DeckTest(unittest.TestCase):
         self.assertIn(Lastcard, deck.cards)
         # Testing if the card we pop off and add again is in the deck
         self.assertEqual(len(deck.cards), 52)
-        # Testing whether the deck length is unaltered after popping off and replacing
+        # Testing whether the deck length is unaltered after replacing
         deck.replace_card(Lastcard)
         # Replace_card which the card instance input is already in the deck
         self.assertEqual(len(deck.cards), 52)
@@ -78,12 +81,13 @@ class DeckTest(unittest.TestCase):
 
     def test_sortcard(self):
         deck = Deck()
-        # step one: Testing whether the two different decks have the same order after sorting
+        # step one: Testing whether the deck have the same order after sorting
         deckoriginal = Deck()
         deck.shuffle()
         deck.sort_cards()
         self.assertEqual(str(deck), str(deckoriginal))
-        # step two: After popping off, testing whether the remaining two different decks have the same order after sorting
+        # step two: After popping off, testing whether the remaining two
+        # different decks have the same order after sorting
         deck = Deck()
         deck.pop_card()
         deckoriginal = Deck()
@@ -100,7 +104,7 @@ class DeckTest(unittest.TestCase):
             self.assertEqual(len(deck.cards), 0)  # error, another bug
         except:
             self.assertEqual(1, 0)
-            # If deal_hand has bugs, the except code will run, the test will fail
+            # If deal_hand has bugs, the except code will run, the test'll fail
 # THE THIRD BUG
 
 
