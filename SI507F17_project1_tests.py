@@ -7,7 +7,8 @@ class CardTest(unittest.TestCase):
     def test_stringtype(self):
         card = Card()
         self.assertEqual(type(card.suit), type('aabbcc'),
-        'Testing if the variable suit is a string type')   # 'aabbcc' is a str
+                         'Testing if the variable suit is a string type')
+        # 'aabbcc' is a str
 
     def test_ranktype(self):
         card = Card()
@@ -34,7 +35,7 @@ class DeckTest(unittest.TestCase):
         # Testing if the constructor builds a list of cards
         deck = Deck()
         All = [(x, y) for x in ['Diamonds', 'Clubs', 'Hearts', 'Spades']
-        for y in range(1, 14)]
+               for y in range(1, 14)]
         for card in deck.cards:
             self.assertIn((card.suit, card.rank_num), All)
             All.remove((card.suit, card.rank_num))
